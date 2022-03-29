@@ -26,4 +26,12 @@ public class PizzaEntity {
     public Integer getId() {
         return id;
     }
+
+    public String getName() {
+        return name;
+    }
+
+    public Set<PizzaSizeEntity> getSizes() {
+        return sizes;
+    }
 }

@@ -22,6 +22,18 @@ public class PizzaSizeEntity {
         this.pizzaId = pizzaId;
     }
 
+    public Integer getId() {
+        return id;
+    }
+
+    public String getSizeType() {
+        return sizeType;
+    }
+
+    public BigDecimal getPriceBase() {
+        return priceBase;
+    }
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
