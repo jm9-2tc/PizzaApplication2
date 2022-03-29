@@ -1,6 +1,6 @@
 package com.pizza.data.entity.order;
 
-import com.pizza.data.entity.ordersize.OrderSizeEntity;
+import com.pizza.data.entity.orderSize.OrderSizeEntity;
 
 import javax.persistence.*;
 import java.util.Date;

@@ -1,7 +1,7 @@
-package com.pizza.data.entity.ordersize;
+package com.pizza.data.entity.orderSize;
 
 import com.pizza.data.entity.order.OrderEntity;
-import com.pizza.data.entity.size.SizeEntity;
+import com.pizza.data.entity.pizzaSize.PizzaSizeEntity;
 
 import javax.persistence.*;
 
@@ -28,5 +28,5 @@ public class OrderSizeEntity {
 
     @ManyToOne
     @JoinColumn(name = "size_id", insertable = false, updatable = false)
-    private SizeEntity size;
+    private PizzaSizeEntity size;
 }

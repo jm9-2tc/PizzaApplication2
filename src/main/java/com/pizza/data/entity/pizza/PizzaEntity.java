@@ -1,6 +1,6 @@
 package com.pizza.data.entity.pizza;
 
-import com.pizza.data.entity.size.SizeEntity;
+import com.pizza.data.entity.pizzaSize.PizzaSizeEntity;
 
 import javax.persistence.*;
 import java.util.Set;
@@ -21,5 +21,9 @@ public class PizzaEntity {
     private String name;
 
     @OneToMany(mappedBy = "pizza", orphanRemoval = true)
-    private Set<SizeEntity> sizes;
+    private Set<PizzaSizeEntity> sizes;
+
+    public Integer getId() {
+        return id;
+    }
 }

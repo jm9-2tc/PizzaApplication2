@@ -1,11 +1,18 @@
 package com.pizza.domain.service;
 
+import com.pizza.data.entity.pizzaSize.PizzaSizeEntity;
+import com.pizza.data.repository.SizeRepository;
+import com.pizza.domain.mapper.SizeMapper;
+import com.pizza.remote.rest.dto.request.AddSizeDto;
 import org.springframework.stereotype.Service;
 import com.pizza.data.entity.pizza.PizzaEntity;
 import com.pizza.data.repository.PizzaRepository;
 import com.pizza.domain.mapper.PizzaMapper;
 import com.pizza.remote.rest.dto.request.AddPizzaDto;
 import com.pizza.remote.rest.dto.response.PizzaDto;
+
+import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class PizzaService {
@@ -25,5 +32,14 @@ public class PizzaService {
         AuthorizationService.checkToken(token);
         PizzaEntity pizzaEntity = pizzaMapper.mapToPizzaEntity(addPizzaDto);
         pizzaRepository.save(pizzaEntity);
+
+        List<AddSizeDto> addSizeDtoList = addPizzaDto.getSizes();
+        List<PizzaSizeEntity> pizzaSizeEntityList = addSizeDtoList
+                .stream()
+                .map(addSizeDto -> sizeMapper.mapToSizeEntity(addSizeDto, pizzaEntity.getId()))
+                .collect(Collectors.toList());
+
+        sizeRepository.saveAll(pizzaSizeEntityList);
+        return null;
     }
 }
