@@ -8,8 +8,7 @@ public class PizzaDto
     private String name;
     private List<SizeDto> sizes;
 
-    public PizzaDto() {
-    }
+    public PizzaDto() {}
 
     public PizzaDto(Integer id, String name, List<SizeDto> sizes)
     {

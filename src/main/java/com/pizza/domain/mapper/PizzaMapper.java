@@ -25,7 +25,7 @@ public class PizzaMapper {
     }
 
     public PizzaDto mapToPizzaDto(PizzaEntity pizzaEntity) {
-        List<SizeDto> sizeDtoList = pizzaEntity.getSizes().stream().map(PizzaSizeEntity::getSizeType).collect(Collectors.toList());
+        List<SizeDto> sizeDtoList = pizzaEntity.getSizes().stream().map(sizeMapper::mapToSizeDto).collect(Collectors.toList());
         return new PizzaDto(pizzaEntity.getId(), pizzaEntity.getName(), sizeDtoList);
     }
 }
