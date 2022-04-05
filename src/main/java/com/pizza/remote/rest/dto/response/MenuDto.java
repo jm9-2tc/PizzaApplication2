@@ -6,10 +6,7 @@ public class MenuDto
 {
     private List<PizzaDto> pizzas;
 
-    public MenuDto()
-    {
-
-    }
+    public MenuDto() {}
 
     public MenuDto(List<PizzaDto> pizzas)
     {

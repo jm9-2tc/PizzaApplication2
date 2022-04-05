@@ -16,10 +16,10 @@ import java.util.stream.Collectors;
 
 @Service
 public class PizzaService {
-    private final PizzaRepository pizzaRepository;
-    private final SizeRepository sizeRepository;
-    private final PizzaMapper pizzaMapper;
-    private final SizeMapper sizeMapper;
+    public final PizzaRepository pizzaRepository;
+    public final SizeRepository sizeRepository;
+    public final PizzaMapper pizzaMapper;
+    public final SizeMapper sizeMapper;
 
     public PizzaService(PizzaRepository pizzaRepository, SizeRepository sizeRepository, PizzaMapper pizzaMapper, SizeMapper sizeMapper) {
         this.pizzaRepository = pizzaRepository;
